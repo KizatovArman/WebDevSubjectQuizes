@@ -1,0 +1,49 @@
+<ng-container *ngIf="!logged">
+  <div>
+    Authorisation
+    <div><input type="text" [(ngModel)]="login"></div>
+    <div><input type="password" [(ngModel)]="password"></div>
+    <div><button (click)="auth()">Log In</button></div>
+  </div>
+  </ng-container>
+  
+  <ng-container *ngIf="logged">
+  CREATE New Post:
+  <div>
+    <input type="text" [(ngModel)]="name" />
+    <input type="text" [(ngModel)]="body">
+    <button (click)="createPost()">Create</button>
+  </div>
+  
+  <ng-container *ngIf ="!loading">
+    Loading...
+  </ng-container>
+  
+  <!-- <ng-container *ngIf="loading">
+    <div>
+      <div *ngFor ="let tl of task_lists" (click)="getTasks(tl)">
+        {{tl.id}} - {{tl.name}}
+      </div>
+    </div>
+  </ng-container> -->
+  
+  <ng-container *ngIf="loading">
+    <div >
+      <div >Posts:</div>
+      <div *ngFor="let p of posts">
+        {{p.title}}<br>
+        {{p.created_at}}<br>
+        {{p.like_count}}
+        <span (click)="updatePost(p)">Update</span>
+        <span (click)="deletePost(p)">Delete</span>
+        <span (click)="likePost(p)">Like</span>
+      </div>
+    </div>
+  </ng-container>
+  
+  
+  <div>
+    <button (click)="logout()">Log Out</button>
+  </div>
+  </ng-container>
+  

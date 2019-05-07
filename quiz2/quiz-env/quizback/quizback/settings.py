@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'zut7orxcagm+lg(i(+#nl%jq7fzvf%tei^(01mmzkh3dv&+ubh'
+SECRET_KEY = '^p$m)3wv&nlt3%bf)#(+i-(^6vq6x$g3*ddr@83@1^rec59@ys'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,9 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'corsheaders',
     'rest_framework',
     'rest_framework.authtoken',
+    'corsheaders',
     'api',
 ]
 
@@ -106,14 +106,15 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.BasicAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework.authentication.TokenAuthentication',
-    ),
-    # 'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberpagination',
+    )
 }
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
